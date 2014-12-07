@@ -1,3 +1,10 @@
+/**
+ * I've completed rewrote the original script at http://lcamtuf.coredump.cx/cachetime/
+ * since it was full of incomprehensible and hard to debug parts.
+ * I believe that now it's more concise and easy to read.
+ * I tried to keep it simple with only the features we need to achieve our goals.
+ */
+
 'use strict';
 
 $(function(){
@@ -30,10 +37,12 @@ $(function(){
   /**
    * Retrieves the list of applications and runs the cache checker
    */
-  $.getJSON('/api/applications.json', function(data) {
-    applications = data;
-    cacheChecker();
-  });
+  var start = function() {
+    $.getJSON('/api/applications.json', function(data) {
+      applications = data;
+      cacheChecker();
+    });
+  }
 
   /**
    * Pop the first application and run the tests
@@ -132,4 +141,9 @@ $(function(){
 
     $('#apps_box').html('').append(list);
   }
+
+  /**
+   * Start execution
+   */
+  start();
 });
