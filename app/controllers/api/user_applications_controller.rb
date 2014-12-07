@@ -13,9 +13,7 @@ class API::UserApplicationsController < ApplicationController
     user = User.find(current_user.id)
 
     # If update is successful reloads the current user in session
-    if user.update(app_ids: params[:app_ids])
-      sign_in user, bypass: true
-    end
+    sign_in user, bypass: true if user.update(app_ids: params[:app_ids])
 
     # Returns an array containing cached and non cached apps for the user
     render json: current_user.to_json(only: [], methods: [:apps, :not_cached_apps]), status: 200

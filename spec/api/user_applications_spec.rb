@@ -18,7 +18,7 @@ describe API::UserApplicationsController, type: :controller do
     let!(:app) { FactoryGirl.create(:app) }
 
     it 'GET /api/applications returns list of apps' do
-      get :applications
+      get :applications, {}
       expect(response.status).to eq 200
       expect(response.body).to eq [app].to_json
     end
