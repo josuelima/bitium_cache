@@ -38,7 +38,13 @@ $(function(){
    * Retrieves the list of applications and runs the cache checker
    */
   var start = function() {
-    $.getJSON('/api/applications.json', function(data) {
+    /**
+     * Runs only when in dashboard page
+     */
+    if(!$('#iframe_container').length)
+      return;
+
+    $.getJSON('/api/applications', function(data) {
       applications = data;
       cacheChecker();
     });
