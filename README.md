@@ -14,7 +14,7 @@ To do this, a set of applications, and assets used by them, are previously defin
 ## Install and run
 - Clone this repo
 - run: `bundle install` to install the gems
-- run: `rake db:migrate` to create the database
+- run: `rake db:setup` to setup the database
 - run: `rake db:seed` to seed the database with some apps and user
 - run: `rails s`
 

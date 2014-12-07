@@ -8,7 +8,7 @@ When an asset reference is no longer valid, it's probably because:
 
 My approach to solve this issue would be to create a mechanism to periodically check if both the asset exists and it's referenced in the application html.
 
-To implement this mechanism, I would create a task to request the assets saved in the database, using Faraday (https://github.com/lostisland/faraday) or HTTParty (https://github.com/jnunemaker/httparty), in order to check if the assets still exist. After that, the task would read the application html source, maybe using Nokogiri (http://www.nokogiri.org),  to check if it's still referenced. In case the asset doesn't exist anymore or is not referenced in the application html, the task sends a notification via e-mail to a member of the team.
+To implement this mechanism, I would create a task to request the assets saved in the database, using Faraday (https://github.com/lostisland/faraday) or HTTParty (https://github.com/jnunemaker/httparty), in order to check if the assets still exists. After that, the task would read the application html source, maybe using Nokogiri (http://www.nokogiri.org),  to check if it's still referenced. In case the asset doesn't exist anymore or is not referenced in the application html, the task sends a notification via e-mail to a member of the team.
 
 To make it run periodically I would use Sidekiq (http://sidekiq.org/) to schedule the task to run automatically as many times as it's needed a day (would discuss this with the team).
 
