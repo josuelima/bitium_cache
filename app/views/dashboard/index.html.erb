@@ -1,0 +1,11 @@
+<h1>Welcome <%= current_user.email %>!</h1>
+
+<p><%= link_to('Logout', destroy_user_session_path, method: :delete) %></p>
+
+<h2>Recently visited Applications</h2>
+
+<div id="apps_box">
+  <p>Please hold on while we check your apps...</p>
+</div>
+
+<iframe id="iframe_container" name="iframe_container" width="0" height="0" src="about:blank" style="display: none;"></iframe>

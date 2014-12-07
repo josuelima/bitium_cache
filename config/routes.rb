@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'dashboard#index'
 
   namespace :api do
     get  '/applications', to: 'user_applications#applications'
