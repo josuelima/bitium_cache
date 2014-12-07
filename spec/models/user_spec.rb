@@ -6,11 +6,11 @@ describe User, type: :model do
   context 'with cached apps' do
     let(:user) { FactoryGirl.create(:user, apps: [app]) }
 
-    it '.apps' do
+    it '#apps' do
       expect(user.apps).to eq [app]
     end
 
-    it '.not_cached_apps' do
+    it '#not_cached_apps' do
       expect(user.not_cached_apps).to be_empty
     end
   end
@@ -18,11 +18,11 @@ describe User, type: :model do
   context 'without cached apps' do
     let(:user) { FactoryGirl.create(:user) }
 
-    it '.apps' do
+    it '#apps' do
       expect(user.apps).to be_empty
     end
 
-    it '.not_cached_apps' do
+    it '#not_cached_apps' do
       expect(user.not_cached_apps).to eq [app]
     end
   end
