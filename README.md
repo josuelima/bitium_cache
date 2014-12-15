@@ -9,13 +9,13 @@ This is an assignment made to Bitium.com
 
 The objective is to present the user with the most relevant applications by determining which ones they are already using.
 
-To do this, a set of applications, and assets used by them, are previously defined at the database, and this tool checks if the user has recently used any of them. It uses a technique described at http://lcamtuf.coredump.cx/cachetime/ , which basically consists in loading the application asset in an iframe and checking the loading speed. If the resource loads quickly we can assume it was cached.
+Initially a set of applications, and assets used by them, are previously defined in the database. When the user logs in to the app, it checks if the user has recently used any of the registered apps. It uses a technique described at http://lcamtuf.coredump.cx/cachetime/ , which basically consists in loading the application asset in an iframe and checking the loading speed. If the resource loads quickly we can assume it was cached.
 
 ## Install and run
 - Clone this repo
-- run: `bundle install` to install the gems
-- run: `rake db:setup` to setup the database
-- run: `rake db:seed` to seed the database with some apps and user
-- run: `rails s`
+- run `bundle install` to install the gems
+- run `rake db:setup` to setup the database
+- run `rake db:seed` to seed the database with some apps and user
+- run `rails s`
 
 If you don't want to create a new user just use the one created at `seeds.rb`
